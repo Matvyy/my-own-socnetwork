@@ -2,35 +2,31 @@ import React from "react";
 import styles from "./Profile.module.css"
 import Posts from "./posts/Posts";
 
-let infoOfMe = {
-    name: "name",
-    avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg",
-    description: "description"
-}
+
 
 const Profile =(props)=>{
     return(
         <div className={styles.profile}>
             
             <div className={styles.avatar}>
-                <img src={infoOfMe.avatar}/>
+                <img src={props.infoAboutMe.avatar} alt="avatar"/>
             </div>
 
             <div className={styles.infomationAboutPerson}>
                 <div className={styles.name}>
-                    {infoOfMe.name}
+                    {props.infoAboutMe.name}
                 </div>
 
             
                 <div className={styles.description}>
-                    {infoOfMe.description}
+                    {props.infoAboutMe.description}
                 </div>
             </div>
 
             <div className={styles.posts}>
                 Posts 
                 <hr />
-                <Posts/>
+                <Posts postsInformationList={props.postsInformationList}/>
             </div>
         </div>
     )

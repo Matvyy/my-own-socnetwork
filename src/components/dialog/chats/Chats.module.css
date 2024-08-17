@@ -1,0 +1,46 @@
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.chatWindow {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    overflow-y: auto;
+}
+.message {
+    margin-bottom: 10px;
+}
+.message .sender {
+    font-weight: bold;
+}
+.message .text {
+    margin-left: 10px;
+}
+.messageInput {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+.messageInput input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.messageInput button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e17979;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.messageInput button:hover {
+    background-color: #a25757;
+}

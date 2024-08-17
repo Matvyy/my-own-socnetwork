@@ -3,12 +3,12 @@ import NavBar from "./components/navbar/NavBar"
 import Profile from "./components/profile/Profile"
 import Dialog from "./components/dialog/Dialog"
 import "./App.css"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 
 
-const App = () => {
+const App = (props) => {
+
   return(
-    <BrowserRouter>
     <div className="appWrapper">
       <header className="header">
         <Header/>
@@ -19,14 +19,23 @@ const App = () => {
       </div>
       
       <div className="content">
-      <Routes>
-          <Route path="/" element={<Profile/>}/>
-          <Route path="/dialog" element={<Dialog/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Profile 
+                    animate={true} 
+                    postsInformationList={props.state.informationAboutProfile.postsInformationList} 
+                    infoAboutMe={props.state.informationAboutProfile.infoAboutMe}
+                    />
+          }/>
+          <Route path="/dialog" element={<Dialog 
+                    animate={true} 
+                    friendsDateList={props.state.informationAboutDialogs.friendsDateList} 
+                    messageDateList={props.state.informationAboutDialogs.messageDateList}
+                    />
+          }/>
+        </Routes>
       </div>
       
     </div>
-    </BrowserRouter>
   )
 }
 

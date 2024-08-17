@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Posts.module.css"
 
-let postsInformationList = [
-    {name: "name", text: "first post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 1},
-    {name: "name", text: "second post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 2},
-    {name: "name", text: "third post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 3},
-]
+// let postsInformationList = [
+//     {name: "name", text: "first post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 1},
+//     {name: "name", text: "second post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 2},
+//     {name: "name", text: "third post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 3},
+// ]
 
 let Post = (props) =>{
     return(
@@ -23,9 +23,9 @@ let Post = (props) =>{
     )
 }
 
-const Posts = () =>{
+const Posts = (props) =>{
 
-    let mapPostsInformationList = postsInformationList.map(
+    let mapPostsInformationList = props.postsInformationList.map(
         info => (<Post name={info.name} avatar={info.avatar} text={info.text} key={info.id}/>)
     )
 
