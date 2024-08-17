@@ -14,13 +14,8 @@ export let rerendereEntireTree = () => {
     root.render(
         <BrowserRouter>
             <App 
-            // state={state} 
-            // addPost={addPost} 
-            // updateNewPostText={updateNewPostText} 
-            // addMessage={addMessage} 
-            // updateNewMessageText={updateNewMessageText}
             state={store.getState()}
-            store={store}
+            dispatch={store.dispatch.bind(store)}
             />
 
         </BrowserRouter>

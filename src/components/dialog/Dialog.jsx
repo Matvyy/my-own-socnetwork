@@ -11,18 +11,13 @@ const Dialog =(props)=>{
         <div className={styles.dialog}>
             <div className={styles.container}>
                 <FriendsList 
-                // friendsDateList={props.friendsDateList}
-                store={props.store}
+                dispatch={props.dispatch}
                 state={props.state}
                 />
 
                 <Chats 
-                // messageDateList={props.messageDateList} 
-                // newMessageText={props.newMessageText} 
-                // addMessage={props.addMessage} 
-                // updateNewMessageText={props.updateNewMessageText}
+                dispatch={props.dispatch}
                 state={props.state}
-                store={props.store}
                 />
             </div>
         </div>

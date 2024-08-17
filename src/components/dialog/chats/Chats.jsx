@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Chats.module.css"
+import { addMessageActionCreater, updateNewMessageTextActionCreator } from "../../../redux/state";
 
 
 const Chats = (props) => {
@@ -15,15 +16,13 @@ const Chats = (props) => {
            </div>
 
            <Input 
-            // newMessageText={props.newMessageText}
-            // addMesassge={props.addMessage} 
-            // updateNewMessageText={props.updateNewMessageText}
-            store={props.store}
+            dispatch={props.dispatch}
             state={props.state}
             />
        </div>
    )
 }
+
 
 
 const Input = (props) =>{
@@ -32,12 +31,16 @@ const Input = (props) =>{
     let newMessageElement = React.createRef()
 
     let newMessage = () =>{
-        props.store.addMessage()
+        // props.store.addMessage()
+        let action = addMessageActionCreater()
+        props.dispatch(action)
     }
 
     let onPostChange = () => {
         let text = newMessageElement.current.value
-        props.store.updateNewMessageText(text)
+        // props.store.updateNewMessageText(text)
+        let action = updateNewMessageTextActionCreator(text)
+        props.dispatch(action)
     }
 
 

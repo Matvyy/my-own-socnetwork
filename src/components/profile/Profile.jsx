@@ -28,12 +28,9 @@ const Profile =(props)=>{
                 Posts 
                 <hr />
                 <Posts 
-                // postsInformationList={props.postsInformationList} 
-                // addPost={props.addPost} 
-                // newPostText={props.newPostText} 
-                // updateNewPostText={props.updateNewPostText}
-                state={props.state}
-                store={props.store}/>
+                dispatch={props.dispatch}
+                state={props.state} 
+                />
             </div>
         </div>
     )
