@@ -1,0 +1,38 @@
+.navbar{
+    grid-area: navbar;
+    background-color: rgb(236, 214, 214);
+    height: 90vh;
+    border: solid 1px  rgb(202, 170, 170);
+
+
+}
+
+
+
+.item{
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.linkContent {
+    display: flex;
+    align-items: center; 
+}
+
+
+.item a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
+
+.item a.active{
+    color: rgb(134, 74, 74);
+}
+
+.linkContent img{
+    width: 20%;
+
+}
