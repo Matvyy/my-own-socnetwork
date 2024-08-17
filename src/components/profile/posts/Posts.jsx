@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "./Posts.module.css"
 
-// let postsInformationList = [
-//     {name: "name", text: "first post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 1},
-//     {name: "name", text: "second post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 2},
-//     {name: "name", text: "third post", avatar: "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg", id: 3},
-// ]
 
 let Post = (props) =>{
     return(
@@ -25,18 +20,31 @@ let Post = (props) =>{
 
 const Posts = (props) =>{
 
-    let mapPostsInformationList = props.postsInformationList.map(
+    let mapPostsInformationList = props.state.informationAboutProfile.postsInformationList.map(
         info => (<Post name={info.name} avatar={info.avatar} text={info.text} key={info.id}/>)
     )
+
+    let newPostElement = React.createRef()
+
+    let newPost = () => {
+
+        props.store.addPost()
+
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value
+        props.store.updateNewPostText(text)
+    }
 
     return(
         <div className={styles.posts}>
             <div className={styles.newPost}>
                 <label> Create new post</label>
                 <br />
-                <textarea></textarea>
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.state.informationAboutProfile.newPostText}></textarea>
                 <br />
-                <button>post</button>
+                <button onClick={newPost}>post</button>
             </div>
             
             {mapPostsInformationList}

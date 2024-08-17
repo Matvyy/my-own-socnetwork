@@ -5,28 +5,35 @@ import Posts from "./posts/Posts";
 
 
 const Profile =(props)=>{
+
     return(
         <div className={styles.profile}>
             
             <div className={styles.avatar}>
-                <img src={props.infoAboutMe.avatar} alt="avatar"/>
+                <img src={props.state.informationAboutProfile.infoAboutMe.avatar} alt="avatar"/>
             </div>
 
             <div className={styles.infomationAboutPerson}>
                 <div className={styles.name}>
-                    {props.infoAboutMe.name}
+                    {props.state.informationAboutProfile.infoAboutMe.name}
                 </div>
 
             
                 <div className={styles.description}>
-                    {props.infoAboutMe.description}
+                    {props.state.informationAboutProfile.infoAboutMe.description}
                 </div>
             </div>
 
             <div className={styles.posts}>
                 Posts 
                 <hr />
-                <Posts postsInformationList={props.postsInformationList}/>
+                <Posts 
+                // postsInformationList={props.postsInformationList} 
+                // addPost={props.addPost} 
+                // newPostText={props.newPostText} 
+                // updateNewPostText={props.updateNewPostText}
+                state={props.state}
+                store={props.store}/>
             </div>
         </div>
     )

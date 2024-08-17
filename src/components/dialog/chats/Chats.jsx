@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Chats.module.css"
 
+
 const Chats = (props) => {
 
-   let mapMessageDateList = props.messageDateList.map(
+   let mapMessageDateList = props.state.informationAboutDialogs.messageDateList.map(
        message => (<Message name={message.name}  text={message.text} key={message.id}/>)
    )
 
@@ -13,16 +14,38 @@ const Chats = (props) => {
                {mapMessageDateList}
            </div>
 
-           <Input/>
+           <Input 
+            // newMessageText={props.newMessageText}
+            // addMesassge={props.addMessage} 
+            // updateNewMessageText={props.updateNewMessageText}
+            store={props.store}
+            state={props.state}
+            />
        </div>
    )
 }
 
-const Input = () =>{
+
+const Input = (props) =>{
+
+
+    let newMessageElement = React.createRef()
+
+    let newMessage = () =>{
+        props.store.addMessage()
+    }
+
+    let onPostChange = () => {
+        let text = newMessageElement.current.value
+        props.store.updateNewMessageText(text)
+    }
+
+
+
    return(
        <div className={styles.messageInput}>
-           <input type="text" placeholder="Type your message..."/>
-           <button>Send</button>
+           <input type="text" onChange={onPostChange} ref={newMessageElement} placeholder="Type your message..." value={props.state.informationAboutDialogs.newMessageText}/>
+           <button onClick={newMessage}>Send</button>
        </div>
    )
 }

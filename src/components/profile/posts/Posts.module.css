@@ -8,8 +8,8 @@
     resize: none;
 }
 
-.newPost button{
-    background-color: #aa0404; /* Green */
+/* .newPost button{
+    background-color: #aa0404; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -18,6 +18,18 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 20px;
+} */
+
+.newPost button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e17979;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.newPost button:hover {
+    background-color: #a25757;
 }
 
 textarea:focus{
