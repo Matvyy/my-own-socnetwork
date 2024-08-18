@@ -2,7 +2,7 @@ import profileReducer from "./profileReducer"
 import dialogsReducer from "./dialogsReducer"
 
 
-let store = {
+let store123 = {
     _callSubscriber(){
         console.log('123')
     },

@@ -20,19 +20,7 @@
 .message .text {
     margin-left: 10px;
 }
-.messageInput {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
-.messageInput input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
+
 .messageInput button {
     padding: 10px 20px;
     border: none;

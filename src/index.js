@@ -6,23 +6,27 @@ import reportWebVitals from './reportWebVitals';
 // import state from './redux/state';
 import { BrowserRouter } from 'react-router-dom';
 // import { addPost, updateNewPostText, subscribe, addMessage, updateNewMessageText } from './redux/state';
-import store from './redux/state';
+import store from './redux/reduxStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export let rerendereEntireTree = () => {
+export let rerendereEntireTree = (state) => {
     root.render(
         <BrowserRouter>
             <App 
-            state={store.getState()}
+            state={state}
             dispatch={store.dispatch.bind(store)}
+            store={store}
             />
 
         </BrowserRouter>
     );
 }
 
-rerendereEntireTree()
-store.subscribe(rerendereEntireTree)
+rerendereEntireTree(store.getState())
+store.subscribe(() => {
+    let state = store.getState()
+    rerendereEntireTree(state)
+})
 
 reportWebVitals();

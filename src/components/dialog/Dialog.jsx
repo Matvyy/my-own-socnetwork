@@ -16,7 +16,7 @@ const Dialog =(props)=>{
                 />
 
                 <Chats 
-                dispatch={props.dispatch}
+                store={props.store}
                 state={props.state}
                 />
             </div>

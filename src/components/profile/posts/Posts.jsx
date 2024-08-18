@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Posts.module.css"
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profileReducer";
 
 
 let Post = (props) =>{
@@ -23,22 +22,20 @@ let Post = (props) =>{
 
 const Posts = (props) =>{
 
-    let mapPostsInformationList = props.state.informationAboutProfile.postsInformationList.map(
+    let mapPostsInformationList = props.posts.map(
         info => (<Post name={info.name} avatar={info.avatar} text={info.text} key={info.id}/>)
     )
 
     let newPostElement = React.createRef()
 
     let newPost = () => {
-        let action = addPostActionCreator()
-        props.dispatch(action)
+        props.addPost()
 
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value
-        let action = updateNewPostTextActionCreator(text)
-        props.dispatch(action)
+        props.updateNewPostText(text)
     }
 
     return(
@@ -46,7 +43,7 @@ const Posts = (props) =>{
             <div className={styles.newPost}>
                 <label> Create new post</label>
                 <br />
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.state.informationAboutProfile.newPostText}></textarea>
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}></textarea>
                 <br />
                 <button onClick={newPost}>post</button>
             </div>
@@ -57,6 +54,5 @@ const Posts = (props) =>{
         </div>
     )
 }
-
 
 export default Posts

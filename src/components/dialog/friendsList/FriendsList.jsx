@@ -6,7 +6,7 @@ import styles from "./FriendsList.module.css"
 
 const FriendsList = (props) => {
 
-    let mapFriendsDateList = props.state.informationAboutDialogs.friendsDateList.map(
+    let mapFriendsDateList = props.state.friendsDateList.map(
         friend => (<div className={styles.friend} key={friend.id}>{friend.name}</div>)
     )
 

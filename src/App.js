@@ -21,15 +21,13 @@ const App = (props) => {
       <div className="content">
         <Routes>
           <Route path="/" element={<Profile 
-              // animate={true} 
-              dispatch={props.dispatch}
-              state={props.state}
+              state={props.state.profileReducer}
+              store={props.store}
               />
           }/>
           <Route path="/dialog" element={<Dialog 
-              // animate={true} 
-              dispatch={props.dispatch}
-              state={props.state}
+              state={props.state.dialogsReducer}
+              store={props.store}
               />
           }/>
         </Routes>
