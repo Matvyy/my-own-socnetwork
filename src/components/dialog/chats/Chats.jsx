@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Chats.module.css"
-import { addMessageActionCreater, updateNewMessageTextActionCreator } from "../../../redux/state";
+import { addMessageActionCreater, updateNewMessageTextActionCreator } from "../../../redux/dialogsReducer";
 
 
 const Chats = (props) => {
@@ -31,14 +31,12 @@ const Input = (props) =>{
     let newMessageElement = React.createRef()
 
     let newMessage = () =>{
-        // props.store.addMessage()
         let action = addMessageActionCreater()
         props.dispatch(action)
     }
 
     let onPostChange = () => {
         let text = newMessageElement.current.value
-        // props.store.updateNewMessageText(text)
         let action = updateNewMessageTextActionCreator(text)
         props.dispatch(action)
     }
