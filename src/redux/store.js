@@ -94,3 +94,51 @@ window.store = store
 //     this._state.informationAboutDialogs.newMessageText = action.newMessageText
 //     this._callSubscriber()
 // }
+
+
+// [
+//     {
+//         id: 1, 
+//         avatar: "https://www.pngitem.com/pimgs/m/71-716892_woman-avatar-icon-png-transparent-png.png", 
+//         followed: true, 
+//         name: "Elya", 
+//         status: "beauty model", 
+//         location: {
+//             city: "Kiev", 
+//             country: "Ukraine"
+//         }
+//     },
+//     {
+//         id: 2, 
+//         avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW6X2lldt_gy2tcbXCKBbKWNVBpH-f1Mcjsw&s", 
+//         followed: true, 
+//         name: "Jienia", 
+//         status: "programmer", 
+//         location: {
+//             city: "Kharkiv",
+//              country: "Ukraine"
+//         }
+//     },
+//     {
+//         id: 3, 
+//         avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa2boNo2OYa6CLv00F8NEYjNAK9Ib6UTH74g&s", 
+//         followed: false, 
+//         name: "George", 
+//         status: "breakdancer", 
+//         location: {
+//             city: "Lvov", 
+//             country: "Ukraine"
+//         }
+//     },
+//     {
+//         id: 4, 
+//         avatar: "https://www.pngitem.com/pimgs/m/576-5768840_cartoon-man-png-avatar-transparent-png.png", 
+//         followed: true, 
+//         name: "Vladus", 
+//         status: "I'm riding a scooter", 
+//         location: {
+//             city: "Poltava",
+//              country: "Ukraine"
+//         }
+//     },
+// ]

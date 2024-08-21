@@ -1,0 +1,71 @@
+.findUsers {
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+.userList {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    list-style-type: none;
+}
+.userItem {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.userItem img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.userInfo {
+    flex: 1;
+}
+.userInfo h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.userInfo p {
+    margin: 5px 0;
+    color: #555;
+}
+.userLocation {
+    font-size: 14px;
+    color: #888;
+}
+
+.btnFollowed {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #ff5757;
+    color: #fff;
+}
+.btnNotFollowed {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #00aaff;
+    color: #fff;
+}
+
+.selectedPade{
+    font-weight: bold;
+}
+
+.findUsers span{
+    font-size: 30px;
+    cursor: pointer;
+}
+

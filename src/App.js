@@ -1,7 +1,8 @@
 import Header from "./components/header/Header"
 import NavBar from "./components/navbar/NavBar"
-import Profile from "./components/profile/Profile"
+import ProfileContainer from "./components/profile/ProfileContainer"
 import Dialog from "./components/dialog/Dialog"
+import FindUsersContainer from "./components/findUsers/UsersContainer"
 import "./App.css"
 import { Route, Routes } from "react-router-dom"
 
@@ -20,16 +21,18 @@ const App = (props) => {
       
       <div className="content">
         <Routes>
-          <Route path="/" element={<Profile 
+          <Route path="/profile/:userId" element={<ProfileContainer 
               state={props.state.profileReducer}
-              store={props.store}
               />
           }/>
+
           <Route path="/dialog" element={<Dialog 
               state={props.state.dialogsReducer}
-              store={props.store}
               />
           }/>
+
+          <Route path="/find-users" element={<FindUsersContainer/>}/>
+
         </Routes>
       </div>
       

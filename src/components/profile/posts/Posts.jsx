@@ -15,6 +15,8 @@ let Post = (props) =>{
                 </div>
             </div>
         </div>
+
+
     )
 }
 
@@ -40,6 +42,8 @@ const Posts = (props) =>{
 
     return(
         <div className={styles.posts}>
+            <h2>Posts</h2>
+            
             <div className={styles.newPost}>
                 <label> Create new post</label>
                 <br />
@@ -48,8 +52,12 @@ const Posts = (props) =>{
                 <button onClick={newPost}>post</button>
             </div>
             
-            {mapPostsInformationList}
 
+            <div className={styles.posts}>
+                {mapPostsInformationList}
+            </div>
+
+        
 
         </div>
     )

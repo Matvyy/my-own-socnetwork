@@ -8,7 +8,7 @@ const NavBar = ()=>{
         <div className={styles.navbar}>   
 
             <div className={styles.item}>
-                <NavLink className={activeLink} to="/">
+                <NavLink className={activeLink} to="/profile">
                     <div className={styles.linkContent}>
                         <img src="https://cdn.icon-icons.com/icons2/3215/PNG/512/user_people_male_avatar_man_icon_196478.png" alt="profile"/>
                         <span>Profile</span>
@@ -37,7 +37,7 @@ const NavBar = ()=>{
             <div className={styles.item}>
                 <NavLink to="/news">
                     <div className={styles.linkContent}>
-                        <img src="https://cdn.icon-icons.com/icons2/3215/PNG/96/window_page_file_document_icon_196480.png" alt="news" />
+                        <img src="https://cdn.icon-icons.com/icons2/4091/PNG/96/document_icon_259655.png" alt="news" />
                         <span>News</span>
                     </div>
                 </NavLink>
@@ -52,6 +52,16 @@ const NavBar = ()=>{
                 </NavLink>
             </div>
 
+            <div className={styles.item}>
+                <NavLink to="/find-users">
+                    <div className={styles.linkContent}>
+                        <img src="https://cdn.icon-icons.com/icons2/3841/PNG/96/users_line_icon_235530.png" alt="setting" />
+                        <span>Find users</span>
+                    </div>
+                </NavLink>
+            </div>
+
+            {/* icon-icons.com */}
         </div>
     )
 }

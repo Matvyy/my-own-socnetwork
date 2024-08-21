@@ -1,9 +1,7 @@
 import React from "react";
-// import styles from "./Profile.module.css"
 import styles from "./Dialog.module.css"
-import Chats from "./chats/Chats";
 import FriendsList from "./friendsList/FriendsList";
-
+import ChatsContainer from "./chats/ChatsContainer";
 
 const Dialog =(props)=>{
 
@@ -11,14 +9,10 @@ const Dialog =(props)=>{
         <div className={styles.dialog}>
             <div className={styles.container}>
                 <FriendsList 
-                dispatch={props.dispatch}
                 state={props.state}
                 />
+                <ChatsContainer/>
 
-                <Chats 
-                store={props.store}
-                state={props.state}
-                />
             </div>
         </div>
 

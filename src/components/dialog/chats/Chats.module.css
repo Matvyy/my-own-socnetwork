@@ -1,4 +1,4 @@
-.chatContainer {
+/* .chatContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -32,3 +32,107 @@
 .messageInput button:hover {
     background-color: #a25757;
 }
+
+.messageInput {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+.messageInput input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+} */
+
+
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.chatHeader {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+.chatHeader img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.chatHeader .friendInfo {
+    display: flex;
+    flex-direction: column;
+}
+.chatHeader .friendInfo .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.chatHeader .friendInfo .status {
+    font-size: 14px;
+    color: #28a745;
+}
+.chatHeader .friendInfo{
+    color: #ccc;
+}
+.chatWindow {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    overflow-y: auto;
+}
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+.message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.message .messageContent {
+    display: flex;
+    flex-direction: column;
+}
+.message .sender {
+    font-weight: bold;
+}
+.message .text {
+    margin-left: 10px;
+}
+.messageInput {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+.messageInput input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.messageInput button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.messageInput button:hover {
+    background-color: #0056b3;
+}
+

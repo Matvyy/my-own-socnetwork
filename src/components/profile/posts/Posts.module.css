@@ -20,6 +20,8 @@
     border-radius: 20px;
 } */
 
+
+
 .newPost button {
     padding: 10px 20px;
     border: none;
@@ -43,54 +45,18 @@ textarea:focus{
 
 
 
-/* .post{
-    display: grid;
-
-    grid-template-areas: 
-    "avatar name"
-    "avatar text";
-    width: 88%;
-    margin-top: 10px;
-
-    grid-template-rows: 25px 1fr;
-    grid-template-columns: 8% 1fr;
-
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(238, 237, 237);
-}
-
-.avatar img{
-    width: 50px;
-    border-radius: 100%;
-    grid-area: avatar;
-    border: 1px solid rgb(160, 160, 160);
-}
-
-.postName{
-    grid-area: name;
-    font-size: 18px;
-    
-}
-
-.postText{
-    grid-area: text;
-    font-size: 16px;
-    
-} */
-
 .bodyPost {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
 .post {
+    background-color: white;
     display: flex;
     align-items: flex-start;
-    border: 1px solid #c0c0c0;
     padding: 15px;
+    margin-bottom: 10px;
     border-radius: 8px;
-    max-width: 600px;
-    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 .avatar {
     width: 60px;
