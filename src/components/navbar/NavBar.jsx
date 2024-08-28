@@ -8,7 +8,7 @@ const NavBar = ()=>{
         <div className={styles.navbar}>   
 
             <div className={styles.item}>
-                <NavLink className={activeLink} to="/profile">
+                <NavLink className={activeLink} to="/profile/31576">
                     <div className={styles.linkContent}>
                         <img src="https://cdn.icon-icons.com/icons2/3215/PNG/512/user_people_male_avatar_man_icon_196478.png" alt="profile"/>
                         <span>Profile</span>

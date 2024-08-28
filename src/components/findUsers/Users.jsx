@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Users.module.css"
 import userPhoto from "./../../assets/images/user_avatar.png"
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { usersAPI } from "../../api/api";
 
 let Users = (props) => {
 
@@ -23,6 +25,7 @@ let Users = (props) => {
             pages.push(i);
         }
     }
+
 
     return (
         <div className={styles.findUsers}>
@@ -49,20 +52,22 @@ let Users = (props) => {
             </div>
             <ul className={styles.userList}>
             {props.users.map(user => <div key={user.id}>
-                <NavLink to={"/profile/" + user.id}>
                     <li className={styles.userItem}>
+                    <NavLink to={"/profile/" + user.id}>
                         <img src={user.photos.small != null ? user.photos.small : userPhoto} alt={user.name}/>
                         <div className={styles.userInfo}>
                             <h3>{user.name}</h3>
                             <p>{user.state}</p>
                             {/* <div className={styles.userLocation}>{user.location.city}, {user.location.country}</div> */}
                         </div>
+                    </NavLink>
                         {user.followed 
-                        ? <button onClick={()=>{props.unfollow(user.id)}} className={styles.btnFollowed}>Following</button> 
-                        : <button onClick={()=>{props.follow(user.id)}} className={styles.btnNotFollowed}>Follow</button>}
-                        
+                        ? <button disabled={props.followingIsFetching
+                            .some((id)=>id===user.id)} onClick={()=>{props.unfollowThunkCreator(user)}} className={styles.btnFollowed}>Following</button> 
+                        : <button disabled={props.followingIsFetching
+                            .some((id)=>id===user.id)} onClick={()=>{props.followThunkCreator(user)}} className={styles.btnNotFollowed}>Follow</button>}
                     </li>
-                </NavLink>
+
             </div>)}
             </ul>
         </div>

@@ -1,10 +1,13 @@
-import Header from "./components/header/Header"
+import HeaderComponent from "./components/header/HeaderContainer"
 import NavBar from "./components/navbar/NavBar"
 import ProfileContainer from "./components/profile/ProfileContainer"
-import Dialog from "./components/dialog/Dialog"
+import DialogContainer from "./components/dialog/DialogContainer"
 import FindUsersContainer from "./components/findUsers/UsersContainer"
+import Login from "./components/login/Login"
 import "./App.css"
 import { Route, Routes } from "react-router-dom"
+import Dialog from "./components/dialog/Dialog"
+
 
 
 const App = (props) => {
@@ -12,7 +15,7 @@ const App = (props) => {
   return(
     <div className="appWrapper">
       <header className="header">
-        <Header/>
+        <HeaderComponent/>
       </header>
       
       <div className="navbar">
@@ -21,18 +24,19 @@ const App = (props) => {
       
       <div className="content">
         <Routes>
-          <Route path="/profile/:userId" element={<ProfileContainer 
-              state={props.state.profileReducer}
+          <Route path="/profile/:userId?" element={<ProfileContainer 
+
               />
           }/>
 
-          <Route path="/dialog" element={<Dialog 
-              state={props.state.dialogsReducer}
+          <Route path="/dialog" element={< DialogContainer
+              // state={props.state.dialogsReducer}
               />
           }/>
 
           <Route path="/find-users" element={<FindUsersContainer/>}/>
-
+          <Route path="/login" element={<Login/>}/>
+          
         </Routes>
       </div>
       

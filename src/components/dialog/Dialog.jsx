@@ -3,6 +3,7 @@ import styles from "./Dialog.module.css"
 import FriendsList from "./friendsList/FriendsList";
 import ChatsContainer from "./chats/ChatsContainer";
 
+
 const Dialog =(props)=>{
 
     return(

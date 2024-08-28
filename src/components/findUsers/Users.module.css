@@ -19,7 +19,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.userItem img {
+.userItem  img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -49,6 +49,7 @@
     font-size: 14px;
     background-color: #ff5757;
     color: #fff;
+
 }
 .btnNotFollowed {
     padding: 8px 16px;
@@ -58,6 +59,7 @@
     font-size: 14px;
     background-color: #00aaff;
     color: #fff;
+
 }
 
 .selectedPade{
