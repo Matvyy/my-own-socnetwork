@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./NavBar.module.css"
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-const NavBar = ()=>{
+const NavBar = (props)=>{
     const activeLink = ({ isActive }) => isActive ? styles.active : undefined
+    
     return(
         <div className={styles.navbar}>   
 
             <div className={styles.item}>
-                <NavLink className={activeLink} to="/profile/31576">
+                <NavLink className={activeLink} to={`/profile/${props.id}`}>
                     <div className={styles.linkContent}>
                         <img src="https://cdn.icon-icons.com/icons2/3215/PNG/512/user_people_male_avatar_man_icon_196478.png" alt="profile"/>
                         <span>Profile</span>
@@ -66,4 +68,8 @@ const NavBar = ()=>{
     )
 }
 
-export default NavBar
+const mapStateToProps = (state) => ({
+    id: state.authReducer.userId
+})
+
+export default connect(mapStateToProps)(NavBar)

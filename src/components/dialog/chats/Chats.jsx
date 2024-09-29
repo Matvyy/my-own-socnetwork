@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Chats.module.css"
-import { redirect } from "react-router-dom";
-
+import { Field, reduxForm } from "redux-form";
+import { Input } from "../../common/formsControls/FormsControl";
+import { maxLengthCreator, required } from "../../../utils/validatores";
 
 
 
@@ -11,16 +12,10 @@ const Chats = (props) => {
        message => (<Message name={message.name} avatar={message.avatar} text={message.text} key={message.id}/>)
    )
 
-   let newMessageElement = React.createRef()
-
-   let newMessage = () =>{
-       props.addMessage()
+   let newMessage = (values) =>{
+       props.addMessage(values.newMessageText)
    }
 
-   let onMessageChange = () => {
-       let text = newMessageElement.current.value
-       props.updateNewTextMessage(text)
-   }
 
    return(
        <div className={styles.chatContainer}>
@@ -36,14 +31,32 @@ const Chats = (props) => {
             <div className={styles.chatWindow}>
                 {mapMessageDateList}
             </div>
-                <div className={styles.messageInput}>
-                    <input onChange={onMessageChange} ref={newMessageElement} placeholder="Type your message..." value={props.dialogsReducer.newMessageText}/>
-                    <button onClick={newMessage}>Send</button>
-                </div>
+                <AddMessageFormRedux 
+                onSubmit={newMessage} />
             </div>
        </div>
    )
 }
+
+const maxLength100 = maxLengthCreator(100)
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={styles.messageInput}>
+                <Field
+                    placeholder="Type your message..."
+                    component={Input}
+                    name="newMessageText"
+                    validate={[required, maxLength100]}
+                />
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    );
+}
+
+const AddMessageFormRedux = reduxForm({ form: "dialogAddMessageForm" })(AddMessageForm);
 
 const Message = (props) =>{
    return(

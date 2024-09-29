@@ -3,14 +3,14 @@ import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 
 let mapStateToPropsForRedirect = (state) => ({
-    isAuthB: state.authReducer.isAuthB
+    isAuth: state.authReducer.isAuth
   })
 
 export let withAuthReducer = (Component) => {
     class RedirectComponent extends React.Component {
         
         render () {
-            if (!this.props.isAuthB) {
+            if (!this.props.isAuth) {
                 return <Navigate to="/login" />
 
               } else{

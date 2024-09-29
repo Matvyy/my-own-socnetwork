@@ -1,12 +1,12 @@
-.newPost textarea{
+/* .newPost textarea{
     border: 1px solid rgb(184, 184, 184);
     background-color: rgb(224, 224, 224);
     width: 30%;
     margin: 10px;
-    /* border-radius: 20px; */
+
     padding:10px;
     resize: none;
-}
+} */
 
 /* .newPost button{
     background-color: #aa0404; 

@@ -1,6 +1,4 @@
 const ADD_MESSAGE = "ADD-MESSAGE"
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT"
-
 
 let initialState = {
     friendsDateList: [
@@ -16,8 +14,6 @@ let initialState = {
         {name: "Elya", text: "i am too?", id: 3, avatar: "https://www.pngitem.com/pimgs/m/71-716892_woman-avatar-icon-png-transparent-png.png"},
         {name: "You", text: "That is cool", id: 4, avatar: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg"},
     ],
-
-    newMessageText: ""
 }
 
 const dialogsReducer = (state = initialState, action) => {
@@ -26,23 +22,14 @@ const dialogsReducer = (state = initialState, action) => {
     switch(action.type) {
     
         case ADD_MESSAGE: {
-            let text = state.newMessageText
+            let text = action.newMessageText
             let newMessage = {name: "You", text: text, id: 4, avatar: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg"}
 
             return{
                 ...state,
                 messageDateList: [...state.messageDateList, newMessage],
-                newMessageText: ""
             }
 
-
-        }
-        case UPDATE_NEW_MESSAGE_TEXT:{
-
-            return{
-                ...state,
-                newMessageText: action.newText
-            }
 
         }
         default: 
@@ -51,15 +38,10 @@ const dialogsReducer = (state = initialState, action) => {
 
 }
 
-export const addMessageActionCreater = () => {
-    return{type: ADD_MESSAGE}
+export const addMessageActionCreater = (newMessageText) => {
+    return{type: ADD_MESSAGE, newMessageText}
 }
 
-export const updateNewMessageTextActionCreator = (text) => {
-    return{
-        type: UPDATE_NEW_MESSAGE_TEXT, newText: text
-    }
-}
 
 
 export default dialogsReducer

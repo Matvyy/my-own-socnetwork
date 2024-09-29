@@ -1,19 +1,13 @@
 import { connect } from "react-redux";
-import { follow, setUsers, unfollow, changeCurrentPage, setTotalUserCount, toggleIsFetching, toggleFollowingIsFetching, getUsersThunkCreator, unfollowThunkCreator, followThunkCreator,
+import {changeCurrentPage, setTotalUserCount, getUsersThunkCreator, unfollowThunkCreator, followThunkCreator,
 } from "../../redux/findUsersReducer";
 import React from "react";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
-import { usersAPI } from "../../api/api";
 import { compose } from "redux";
 import { withAuthReducer } from "../hoc/withAuthRedirect";
 
 class UsersComponent extends React.Component {
-
-    constructor(props){
-        super(props)
-    }
 
     componentDidMount(){
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize)

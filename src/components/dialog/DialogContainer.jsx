@@ -1,7 +1,6 @@
 import React from "react";
 import Dialog from "./Dialog";
 import { connect } from "react-redux";
-import { Navigate } from "react-router-dom";
 import { withAuthReducer } from "../hoc/withAuthRedirect";
 import { compose } from "redux";
 
@@ -12,8 +11,6 @@ class DialogContainer extends React.Component {
         )
     }
 }
-
-//let AuthRedirectComponent = withAuthReducer(DialogContainer)
 
 
 

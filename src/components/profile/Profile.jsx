@@ -16,7 +16,7 @@ const Profile =(props)=>{
         <div className={styles.profileBody}>
             <div className={styles.profileContainer}>
                 
-                <PersonInformation profile={props.profile}/>
+                <PersonInformation profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
 
                 <div className={styles.content}>
                     <PostContainer />
